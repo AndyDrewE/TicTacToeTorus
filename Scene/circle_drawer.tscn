@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://t6pppcexpipt"]
+
+[ext_resource type="Script" path="res://Scripts/circle_drawer.gd" id="1_afd5k"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_hl4fe"]
+
+[node name="circle_drawer" type="Node3D"]
+script = ExtResource("1_afd5k")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_hl4fe")

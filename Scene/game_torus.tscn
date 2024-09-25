@@ -1,0 +1,21 @@
+[gd_scene load_steps=6 format=3 uid="uid://caok1xvh4fjgy"]
+
+[ext_resource type="Script" path="res://Scripts/torus_board.gd" id="1_0fcjs"]
+[ext_resource type="Script" path="res://addons/draw3d/draw_3d.gd" id="2_mv1dv"]
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_v581o"]
+
+[sub_resource type="TorusMesh" id="TorusMesh_mkkrd"]
+material = SubResource("ORMMaterial3D_v581o")
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_0tbo4"]
+
+[node name="game_torus" type="Node3D"]
+
+[node name="torus_board" type="MeshInstance3D" parent="."]
+mesh = SubResource("TorusMesh_mkkrd")
+script = ExtResource("1_0fcjs")
+
+[node name="board" type="MeshInstance3D" parent="torus_board"]
+mesh = SubResource("ImmediateMesh_0tbo4")
+script = ExtResource("2_mv1dv")

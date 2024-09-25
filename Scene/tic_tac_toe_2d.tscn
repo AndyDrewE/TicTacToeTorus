@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://cymxqfmcvmhlq"]
+
+[ext_resource type="Texture2D" uid="uid://8ak3t7ipgr1x" path="res://Assets/TicTacToeBoard.png" id="1_0nk7m"]
+[ext_resource type="Script" path="res://Scripts/tic_tac_toe_2d.gd" id="2_ofpme"]
+
+[node name="tic_tac_toe_2D" type="TextureRect"]
+custom_minimum_size = Vector2(52, 52)
+offset_left = 360.0
+offset_top = 120.0
+offset_right = 412.0
+offset_bottom = 172.0
+scale = Vector2(8, 8)
+texture = ExtResource("1_0nk7m")
+script = ExtResource("2_ofpme")
+
+[node name="board_grid" type="GridContainer" parent="."]
+layout_mode = 0
+offset_right = 52.0
+offset_bottom = 52.0
+theme_override_constants/h_separation = 2
+theme_override_constants/v_separation = 2
+columns = 3
+
+[node name="top_left" type="PanelContainer" parent="board_grid"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="top_middle" type="PanelContainer" parent="board_grid"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="top_right" type="PanelContainer" parent="board_grid"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="middle_left" type="PanelContainer" parent="board_grid"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="middle_middle" type="PanelContainer" parent="board_grid"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="middle_right" type="PanelContainer" parent="board_grid"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="bottom_left" type="PanelContainer" parent="board_grid"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="bottom_middle" type="PanelContainer" parent="board_grid"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="bottom_right" type="PanelContainer" parent="board_grid"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2

@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://c76tpqlvskngs"]
+
+[ext_resource type="Script" path="res://draw_3d_example.gd" id="1"]
+[ext_resource type="Script" path="res://addons/draw3d/draw_3d.gd" id="2"]
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_x46i0"]
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_rbdk1"]
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_yvsrg"]
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_roq0p"]
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_8js5x"]
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_cee62"]
+
+[node name="Example" type="Node3D"]
+script = ExtResource("1")
+
+[node name="Sphere" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.266975, 0, 0.94755, 0, 1, 0, -0.94755, 0, -0.266975, -5, 0, -1)
+mesh = SubResource("ImmediateMesh_x46i0")
+script = ExtResource("2")
+
+[node name="TransformMe" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.999689, 0, 0, 0, -0.884434, 0.394759, 0, -0.394867, -0.884222, 8.2255, 0, 0)
+mesh = SubResource("ImmediateMesh_rbdk1")
+script = ExtResource("2")
+
+[node name="Arcs" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+mesh = SubResource("ImmediateMesh_yvsrg")
+script = ExtResource("2")
+
+[node name="Shapes" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
+mesh = SubResource("ImmediateMesh_roq0p")
+script = ExtResource("2")
+
+[node name="Primitives" type="MeshInstance3D" parent="."]
+mesh = SubResource("ImmediateMesh_8js5x")
+script = ExtResource("2")
+
+[node name="SinglePlane" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+mesh = SubResource("ImmediateMesh_cee62")
+script = ExtResource("2")
+draw_vertex_points = true
