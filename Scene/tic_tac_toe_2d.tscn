@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cymxqfmcvmhlq"]
+[gd_scene load_steps=4 format=3 uid="uid://cymxqfmcvmhlq"]
 
 [ext_resource type="Texture2D" uid="uid://8ak3t7ipgr1x" path="res://Assets/TicTacToeBoard.png" id="1_0nk7m"]
 [ext_resource type="Script" path="res://Scripts/tic_tac_toe_2d.gd" id="2_ofpme"]
+[ext_resource type="Script" path="res://Scripts/boxes.gd" id="3_fsm8g"]
 
 [node name="tic_tac_toe_2D" type="TextureRect"]
 custom_minimum_size = Vector2(52, 52)
@@ -21,38 +22,55 @@ theme_override_constants/h_separation = 2
 theme_override_constants/v_separation = 2
 columns = 3
 
-[node name="top_left" type="PanelContainer" parent="board_grid"]
+[node name="top_left" type="Panel" parent="board_grid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+script = ExtResource("3_fsm8g")
+index = Vector2i(-1, 1)
 
-[node name="top_middle" type="PanelContainer" parent="board_grid"]
+[node name="top_middle" type="Panel" parent="board_grid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+script = ExtResource("3_fsm8g")
+index = Vector2i(0, 1)
 
-[node name="top_right" type="PanelContainer" parent="board_grid"]
+[node name="top_right" type="Panel" parent="board_grid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+script = ExtResource("3_fsm8g")
+index = Vector2i(1, 1)
 
-[node name="middle_left" type="PanelContainer" parent="board_grid"]
+[node name="middle_left" type="Panel" parent="board_grid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+script = ExtResource("3_fsm8g")
+index = Vector2i(-1, 0)
 
-[node name="middle_middle" type="PanelContainer" parent="board_grid"]
+[node name="middle_middle" type="Panel" parent="board_grid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+script = ExtResource("3_fsm8g")
 
-[node name="middle_right" type="PanelContainer" parent="board_grid"]
+[node name="middle_right" type="Panel" parent="board_grid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+script = ExtResource("3_fsm8g")
+index = Vector2i(1, 0)
 
-[node name="bottom_left" type="PanelContainer" parent="board_grid"]
+[node name="bottom_left" type="Panel" parent="board_grid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+script = ExtResource("3_fsm8g")
+index = Vector2i(-1, -1)
 
-[node name="bottom_middle" type="PanelContainer" parent="board_grid"]
+[node name="bottom_middle" type="Panel" parent="board_grid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+script = ExtResource("3_fsm8g")
+index = Vector2i(0, -1)
 
-[node name="bottom_right" type="PanelContainer" parent="board_grid"]
+[node name="bottom_right" type="Panel" parent="board_grid"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+script = ExtResource("3_fsm8g")
+index = Vector2i(1, -1)
