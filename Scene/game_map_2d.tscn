@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://356ebwt7cg3j"]
+
+[ext_resource type="PackedScene" uid="uid://cymxqfmcvmhlq" path="res://Scene/tic_tac_toe_2d.tscn" id="1_tethi"]
+
+[node name="game_map_2D" type="SubViewport"]
+disable_3d = true
+handle_input_locally = false
+size = Vector2i(52, 52)
+
+[node name="tic_tac_toe_2D" parent="." instance=ExtResource("1_tethi")]

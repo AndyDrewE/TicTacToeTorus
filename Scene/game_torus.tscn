@@ -1,21 +1,25 @@
-[gd_scene load_steps=6 format=3 uid="uid://caok1xvh4fjgy"]
+[gd_scene load_steps=7 format=3 uid="uid://caok1xvh4fjgy"]
 
 [ext_resource type="Script" path="res://Scripts/torus_board.gd" id="1_0fcjs"]
-[ext_resource type="Script" path="res://addons/draw3d/draw_3d.gd" id="2_mv1dv"]
+[ext_resource type="PackedScene" uid="uid://356ebwt7cg3j" path="res://Scene/game_map_2d.tscn" id="2_o3n0c"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_n4ean"]
+viewport_path = NodePath("game_map_2D")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o7clp"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_n4ean")
 
 [sub_resource type="ORMMaterial3D" id="ORMMaterial3D_v581o"]
 
 [sub_resource type="TorusMesh" id="TorusMesh_mkkrd"]
 material = SubResource("ORMMaterial3D_v581o")
 
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_0tbo4"]
-
 [node name="game_torus" type="Node3D"]
 
 [node name="torus_board" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_o7clp")
 mesh = SubResource("TorusMesh_mkkrd")
 script = ExtResource("1_0fcjs")
 
-[node name="board" type="MeshInstance3D" parent="torus_board"]
-mesh = SubResource("ImmediateMesh_0tbo4")
-script = ExtResource("2_mv1dv")
+[node name="game_map_2D" parent="." instance=ExtResource("2_o3n0c")]
