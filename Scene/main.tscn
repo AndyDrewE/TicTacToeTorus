@@ -1,6 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://ceynjknhsxf5f"]
+[gd_scene load_steps=6 format=3 uid="uid://ceynjknhsxf5f"]
 
-[ext_resource type="PackedScene" uid="uid://caok1xvh4fjgy" path="res://Scene/game_torus.tscn" id="1_gpqwe"]
+[ext_resource type="PackedScene" uid="uid://356ebwt7cg3j" path="res://Scene/game_map_2d.tscn" id="2_3tgqf"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_qfjjt"]
+viewport_path = NodePath("game_torus/game_map_2D")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_la4v6"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_qfjjt")
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_v581o"]
+
+[sub_resource type="TorusMesh" id="TorusMesh_mkkrd"]
+material = SubResource("ORMMaterial3D_v581o")
 
 [node name="main" type="Node3D"]
 
@@ -10,4 +22,10 @@ transform = Transform3D(0.707107, -0.353553, 0.612373, 0, 0.866025, 0.5, -0.7071
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera3D"]
 sky_mode = 1
 
-[node name="game_torus" parent="." instance=ExtResource("1_gpqwe")]
+[node name="game_torus" type="Node3D" parent="."]
+
+[node name="torus_board" type="MeshInstance3D" parent="game_torus"]
+material_override = SubResource("StandardMaterial3D_la4v6")
+mesh = SubResource("TorusMesh_mkkrd")
+
+[node name="game_map_2D" parent="game_torus" instance=ExtResource("2_3tgqf")]

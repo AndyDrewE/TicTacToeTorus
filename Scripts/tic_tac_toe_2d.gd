@@ -1,5 +1,6 @@
 extends TextureRect
 
+
 @onready var board_grid = $board_grid
 @onready var boxes = board_grid.get_children()
 
@@ -28,9 +29,6 @@ func _ready():
 	circle_style.texture = CIRCLE_TEX
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
 func update_turn(box : Panel):
 	## X's turn
@@ -64,7 +62,7 @@ func check_victory(box_array):
 		[Vector2i(0,-1),Vector2i(0,0), Vector2i(0,1)],
 		[Vector2i(1,-1),Vector2i(1,0), Vector2i(1,1)],
 		[Vector2i(-1,1),Vector2i(0,0), Vector2i(1,-1)],#MAIN DIAGS
-		[Vector2i(1,-1),Vector2i(0,0), Vector2i(-1,1)],
+		[Vector2i(-1,-1),Vector2i(0,0), Vector2i(1,1)],
 		[Vector2i(0,1),Vector2i(1,0), Vector2i(-1,-1)],#OFF DIAGS
 		[Vector2i(1,1),Vector2i(-1,0), Vector2i(0,-1)],
 		[Vector2i(-1,1),Vector2i(1,0), Vector2i(0,-1)],
